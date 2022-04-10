@@ -1,3 +1,9 @@
-export interface UsersState {}
+import { User } from '../../models/user.model';
 
-export const initialUserState: UsersState = {};
+export interface UsersState {
+    list: User[],
+}
+
+export const initialUserState: UsersState = {
+    list: [],
+};

@@ -1,1 +1,3 @@
-<h1>Betsys trial day app</h1>
+<div class="title">Users table</div>
+<app-users-table *ngIf="users$ | async as users"
+                 [users]="users"></app-users-table>
