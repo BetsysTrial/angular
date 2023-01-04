@@ -1,3 +1,1 @@
-<div class="title">Users table</div>
-<app-users-table *ngIf="users$ | async as users"
-                 [users]="users"></app-users-table>
+<app-users-table [loggedUser]="loggedUser"></app-users-table>

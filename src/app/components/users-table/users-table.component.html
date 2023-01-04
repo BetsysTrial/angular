@@ -1,5 +1,14 @@
-<div *ngFor="let user of users" class="row">
-    <div>{{user.name}}</div>
-    <div>{{user.address.city}}</div>
+<div *ngIf="loggedUser">
+    <div>Welcome our favorite user</div>
+    <div>{{ getFullName() }}</div>
+    <div>status: {{loggedUser.isBlocked ? 'blocked' : 'unblocked'}}</div>
 </div>
 
+<div class="table">
+    <div *ngFor="let user of users"
+         style="{{user.isBlocked ? 'color: red' : ''}}"
+         class="row">
+        <div>name: {{user.name}}</div>
+        <div>surname: {{user.surname}}</div>
+    </div>
+</div>

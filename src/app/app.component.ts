@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { selectUsersList } from './store/users/users.selectors';
 import { AppState } from './store/app.state';
 import { Store } from '@ngrx/store';
-import { User } from './models/user.model';
-import { Observable } from 'rxjs';
 import { loadUsersAction } from './store/users/users.actions';
 
 @Component({
@@ -12,7 +9,7 @@ import { loadUsersAction } from './store/users/users.actions';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-    users$: Observable<User[]> = this.store.select(selectUsersList);
+    loggedUser = { name: 'John', surname: 'Doe'};
 
     constructor(private readonly store: Store<AppState>) {}
 
