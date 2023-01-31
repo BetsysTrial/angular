@@ -39,5 +39,3 @@ export class UserService {
       );
   }
 }
-
-// tap(_ => this.log('fetched users')),

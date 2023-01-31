@@ -1,7 +1,9 @@
 <h2>Users table</h2>
 <table>
-    <tr *ngFor="let user of users$ | async">
-        <td>{{ user.name }}</td>
-        <td>{{ user.address.city }}</td>
+    <tr *ngFor="let users_chunk of users$ | async | chunk:2">
+        <td *ngFor="let user of users_chunk">
+            <div>{{ user.name }}</div>
+            <div>{{ user.address.city }}</div>
+        </td>
     </tr>
 </table>
